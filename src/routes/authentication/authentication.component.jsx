@@ -8,7 +8,7 @@ const Authentication = () => {
     <div className='authentication-container'>
       <SignInForm />
       <SignUpForm />
-    </div>
+    </div> 
   );
 };
 
