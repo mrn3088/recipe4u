@@ -7,7 +7,7 @@ import "./checkout-item.styles.scss";
 
 const CheckoutItem = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
   const cartItems = useSelector(selectCartItems);
 
   const clearItemHandler = () => dispatch(clearItemFromCart(cartItems, cartItem));
