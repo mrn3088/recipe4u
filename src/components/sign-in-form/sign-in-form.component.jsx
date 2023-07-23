@@ -10,7 +10,10 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
-import { googleSignInStart } from "../../store/user/user.action";
+import {
+  googleSignInStart,
+  emailSignInStart,
+} from "../../store/user/user.action";
 import "./sign-in-form.styles.scss";
 
 const defaultFormFields = {
@@ -35,10 +38,7 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const { user } = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
+      dispatch(emailSignInStart(email, password));
       resetFormFields();
     } catch (error) {
       switch (error.code) {
