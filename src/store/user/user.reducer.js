@@ -30,6 +30,16 @@ export const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         error: payload,
       };
+    case USER_ACTION_TYPES.SIGN_UP_SUCCESS:
+      return {
+        ...state,
+        currentUser: payload,
+      };
+    case USER_ACTION_TYPES.SIGN_UP_FAILED:
+      return {
+        ...state,
+        error: payload,
+      };
     default:
       return state; // no state change, so return the current state
   }
