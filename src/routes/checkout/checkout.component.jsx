@@ -1,17 +1,21 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import {
   selectCartTotal,
   selectCartItems,
 } from "../../store/cart/cart.selector";
 
+import { clearAllItemsFromCart } from "../../store/cart/cart.action";
+
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
+import PaymentForm from "../../components/payment-form/payment-form.component";
 
 import "./checkout.styles.scss";
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
+  const dispatch = useDispatch();
 
   return (
     <div className="checkout-container">
@@ -35,7 +39,16 @@ const Checkout = () => {
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
+      <span
+        className="clear"
+        onClick={() => {
+          dispatch(clearAllItemsFromCart());
+        }}
+      >
+        Clear All
+      </span>
       <span className="total">Total : {cartTotal}</span>
+      <PaymentForm />
     </div>
   );
 };
