@@ -10,7 +10,7 @@ exports.handler = async (event) => {
       currency: "usd",
       payment_method_types: ["card"],
     });
-
+    console.log(paymentIntent);
     return {
       statusCode: 200,
       body: JSON.stringify(paymentIntent),
