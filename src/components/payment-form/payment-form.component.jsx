@@ -53,7 +53,9 @@ const PaymentForm = () => {
         },
       },
     });
+
     setIsProcessingPayment(false);
+
     if (paymentResult.error) {
       alert(paymentResult.error);
     } else {
