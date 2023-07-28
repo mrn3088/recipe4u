@@ -15,7 +15,7 @@ export const LogoContainer = styled(Link)`
   padding: 25px;
 `;
 
-export const NavLinksContainer = styled.div`
+export const NavLinks = styled.div`
   width: 50%;
   height: 100%;
   display: flex;
@@ -28,3 +28,11 @@ export const NavLink = styled(Link)`
   cursor: pointer;
 `;
 
+export const NavLinkAsSpan = styled.span`
+  padding: 10px 15px;
+  cursor: pointer;
+
+  &:hover {
+    color: #000;
+  }
+`;
