@@ -102,7 +102,7 @@ export const clearItemFromCart = (
   return setCartItems(newCartItems);
 };
 
-export const clearAllItemsFromCart = (cartItems: CartItem[]) => {
+export const clearAllItemsFromCart = () => {
   const newCartItems = clearAllCartItem();
   return setCartItems(newCartItems);
 };
