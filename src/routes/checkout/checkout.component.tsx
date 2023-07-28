@@ -9,8 +9,13 @@ import { clearAllItemsFromCart } from "../../store/cart/cart.action";
 
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
 import PaymentForm from "../../components/payment-form/payment-form.component";
-
-import "./checkout.styles.scss";
+import {
+  CheckoutContainer,
+  CheckoutHeaderContainer,
+  ClearButtonContainer,
+  HeaderBlockContainer,
+  TotalContainer,
+} from "./checkout.styles";
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
@@ -18,38 +23,38 @@ const Checkout = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="checkout-container">
-      <div className="checkout-header">
-        <div className="header-block">
+    <CheckoutContainer>
+      <CheckoutHeaderContainer>
+        <HeaderBlockContainer>
           <span>Product</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Description</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Quantity</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Price</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Remove</span>
-        </div>
-      </div>
+        </HeaderBlockContainer>
+      </CheckoutHeaderContainer>
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <span
+      <ClearButtonContainer
         className="clear"
         onClick={() => {
           dispatch(clearAllItemsFromCart());
         }}
       >
         Clear All
-      </span>
-      <span className="total">Total : {cartTotal}</span>
+      </ClearButtonContainer>
+      <TotalContainer>Total : {cartTotal}</TotalContainer>
       <PaymentForm />
-    </div>
+    </CheckoutContainer>
   );
 };
 

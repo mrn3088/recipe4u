@@ -14,6 +14,9 @@ export const CartIconContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 export const ItemCount = styled.span`

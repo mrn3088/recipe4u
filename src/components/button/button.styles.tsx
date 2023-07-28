@@ -24,6 +24,9 @@ export const BaseButton = styled.button`
     color: black;
     border: 1px solid black;
   }
+  &:active {
+    transform: scale(0.99);
+  }
 `;
 
 export const GoogleSignInButton = styled(BaseButton)`
