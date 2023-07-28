@@ -16,7 +16,7 @@ type FormInputProps = {
 export const FormInputLabel = styled.label<FormInputProps>`
   color: ${subColor};
   font-size: 16px;
-  font-weight: normal;
+  font-weight: normal; 
   position: absolute;
   pointer-events: none;
   left: 5px;
