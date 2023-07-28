@@ -21,13 +21,13 @@ export const cartReducer = (
   if (setIsCartOpen.match(action)) {
     return {
       ...state,
-      cartItems: action.payload,
+      isCartOpen: action.payload,
     };
   }
   if (setCartItems.match(action)) {
     return {
       ...state,
-      isCartOpen: action.payload,
+      cartItems: action.payload,
     };
   }
   return state;
